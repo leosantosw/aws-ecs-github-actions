@@ -1,1 +1,3 @@
 aws ssm get-parameter --name app-nestjs --query Parameter.Value --output text > .env
+
+aws ecs describe-task-definition --task-definition task123 --query taskDefinition > task-definition.json
