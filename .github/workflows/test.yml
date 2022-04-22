@@ -26,7 +26,6 @@ jobs:
           ssm-path: /app-nestjs
           format: shell
           output: .env
-          decryption: true
 
       # - uses: ProcureAi/aws-ssm-secrets-multiple@v1.0.0
       #   with:
