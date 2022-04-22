@@ -15,7 +15,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.MY_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - uses: almerindo/action-env-from-aws-ssm
+      - uses: almerindo/action-env-from-aws-ssm@v1.2.1
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.MY_ACCESS_KEY_ID }} 
           AWS_SECRET_ACCESS_KEY: ${{ secrets.MY_SECRET_ACCESS_KEY }}
