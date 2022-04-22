@@ -22,7 +22,7 @@ jobs:
           AWS_DEFAULT_REGION: us-east-1
         with:
           ssm-path: /app-nestjs
-          format: shell
+          format: dotenv
           output: .env
           decryption: true
 
