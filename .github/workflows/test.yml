@@ -14,17 +14,16 @@ jobs:
           aws-access-key-id: ${{ secrets.MY_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.MY_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-
-      - uses: almerindo/action-env-from-aws-ssm@v1.2.1
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.MY_ACCESS_KEY_ID }} 
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.MY_SECRET_ACCESS_KEY }}
-          AWS_DEFAULT_REGION: us-east-1
+          
+      - name: Prepare .env file
+        uses: nohmad/aws-ssm-parameter-store-action@master
         with:
-          ssm-path: /app-nestjs
+          aws-access-key-id: ${{ secrets.MY_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.MY_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+          path: /app-nestjs
           format: dotenv
-          output: .env
-          decryption: true
+          filename: .env
 
           
       - name: List directory
