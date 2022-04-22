@@ -14,17 +14,9 @@ jobs:
           aws-access-key-id: ${{ secrets.MY_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.MY_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-          
-      - name: Prepare .env file
-        uses: nohmad/aws-ssm-parameter-store-action@master
-        with:
-          aws-access-key-id: ${{ secrets.MY_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.MY_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
-          path: /app-nestjs
-          format: dotenv
-          filename: .env
-
+      
+      - run: |
+          aws ssm get-parameter --name app-nestjs --query Parameter.Value --output text > .env
           
       - name: List directory
         run: ls -la
