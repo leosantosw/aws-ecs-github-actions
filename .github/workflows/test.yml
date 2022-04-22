@@ -23,6 +23,20 @@ jobs:
             PARAMETER=test-parameter
       - run: |
           echo "this is your secret: $PARAMETER"
-      
+
+      - run: | 
+          echo $PARAMETER > .env
+          
       - name: List directory
         run: ls -la
+          
+      - run: |
+          cat .env
+      
+      
+      
+      
+      
+      
+      
+      
