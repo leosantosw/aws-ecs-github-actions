@@ -34,7 +34,8 @@ jobs:
       #       PARAMETER=app-nestjs
 
       # - run: | 
-      #     echo $PARAMETER > .env
+      #     echo $PARAMETER > .env 
+      
           
       - name: List directory
         run: ls -la
