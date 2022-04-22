@@ -20,18 +20,13 @@ jobs:
       - uses: ProcureAi/aws-ssm-secrets-multiple@v1.0.0
         with:
           SSM_PARAMETERS: |
-            PARAMETER=test-parameter
-      - run: |
-          echo "this is your secret: $PARAMETER"
+            PARAMETER=app-nestjs
 
       - run: | 
           echo $PARAMETER > .env
           
       - name: List directory
         run: ls -la
-          
-      - run: |
-          cat .env
       
       
       
