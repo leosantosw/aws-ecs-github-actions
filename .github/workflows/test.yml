@@ -20,10 +20,9 @@ jobs:
       - uses: ProcureAi/aws-ssm-secrets-multiple@v1.0.0
         with:
           SSM_PARAMETERS: |
-            FOO=/app/production/foo,
-            BAR=/app/production/bar,
+            PARAMETER=test-parameter
       - run: |
-          echo "this is your secret: $FOO"
+          echo "this is your secret: $PARAMETER"
       
       - name: List directory
         run: ls -la
