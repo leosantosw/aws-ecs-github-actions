@@ -22,8 +22,8 @@ jobs:
           SSM_PARAMETERS: |
             FOO=/app/production/foo,
             BAR=/app/production/bar,
-      
-      - run: echo "this is your secret: $FOO"
+      - run: |
+          echo "this is your secret: $FOO"
       
       - name: List directory
         run: ls -la
