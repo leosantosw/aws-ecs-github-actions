@@ -11,11 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.MY_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.MY_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+      # - uses: aws-actions/configure-aws-credentials@v1
+      #   with:
+      #     aws-access-key-id: ${{ secrets.MY_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.MY_SECRET_ACCESS_KEY }}
+      #     aws-region: us-east-1
       
       - uses: deptno/action-aws-ssm-to-dotenv@v1.3.1
         env:
@@ -23,7 +23,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.MY_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-east-1
         with:
-          ssm-path: app-nestjs
+          ssm-path: /app-nestjs
           format: shell
           output: .env
           decryption: true
