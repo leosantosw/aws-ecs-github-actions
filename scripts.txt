@@ -1,0 +1,1 @@
+aws ssm get-parameter --name app-nestjs --query Parameter.Value --output text > .env

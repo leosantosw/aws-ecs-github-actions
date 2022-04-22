@@ -5,7 +5,7 @@ export class AppService {
   getHello() {
     return JSON.stringify({
       status: process.env.STATUS,
-      message: process.env.MSG,
+      message: process.env.MESSAGE,
     });
   }
 }
