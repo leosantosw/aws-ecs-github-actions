@@ -9,4 +9,15 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/error')
+  launchError(): string {
+    throw new Error('Erro na aplicação');
+    return 'OK';
+  }
+
+  @Get('/private')
+  privatePath(): string {
+    return 'OK';
+  }
 }

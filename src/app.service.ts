@@ -6,7 +6,6 @@ export class AppService {
     return JSON.stringify({
       status: process.env.STATUS,
       message: process.env.MESSAGE,
-      timestamp: new Date().getTime(),
     });
   }
 }

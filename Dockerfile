@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node
 
 WORKDIR /usr/src/app
 
@@ -9,4 +9,9 @@ RUN npm install
 COPY . .
 
 RUN npm run build
-CMD ["node", "dist/main"]
+
+RUN npm install pm2 -g
+
+CMD ["pm2-runtime", "dist/main.js"]
+
+# CMD ["node", "dist/main.js"]
